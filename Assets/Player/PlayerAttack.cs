@@ -10,9 +10,12 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Vector2 attackSize;
     [SerializeField] private LayerMask hittableLayer;
     [SerializeField] private float attackPauseLength, attackCooldown;
-    public static Action onAttack, onAttackLeft, onAttackRight, onAttackBoth, onAttackEnd;
-    [SerializeField] private UnityEvent uOnAttack, uOnAttackLeft, uOnAttackRight, uOnAttackBoth, uOnAttackEnd;
+    public static Action onAttack, onAttackLeft, onAttackRight, onAttackBoth, onAttackApply, onAttackEnd;
+    [SerializeField] private UnityEvent uOnAttack, uOnAttackLeft, uOnAttackRight, uOnAttackBoth, uOnAttackApply, uOnAttackEnd;
+
     private bool wasTouching, canAttack = true;
+
+    private Collider2D[] leftHittables, rightHittables;
     private void Start()
     {
         playerManager = GetComponent<PlayerManager>();
@@ -28,8 +31,8 @@ public class PlayerAttack : MonoBehaviour
     {
         if (!canAttack) return;
 
-        Collider2D[] leftHittables = LeftHittables();
-        Collider2D[] rightHittables = RightHittables();
+        leftHittables = LeftHittables();
+        rightHittables = RightHittables();
 
         Debug.Log($"Left: {leftHittables.Length}, Right: {rightHittables.Length}");
 
@@ -65,7 +68,6 @@ public class PlayerAttack : MonoBehaviour
     }
     private void Attack(Collider2D[] hittables)
     {
-        foreach (Collider2D hittable in hittables) if (hittable.TryGetComponent(out IHittable hittableScript)) hittableScript.Hit();
         transform.position = new Vector3(transform.position.x, hittables[0].transform.position.y, transform.position.z);
 
         canAttack = false;
@@ -84,5 +86,16 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(attackLeft.position, attackSize);
         Gizmos.DrawWireCube(attackRight.position, attackSize);
+    }
+    private void HitLeftHittables() => HitHittables(ref leftHittables);
+    private void HitRightHittables() => HitHittables(ref rightHittables);
+    private void HitHittables(ref Collider2D[] hittables)
+    {
+        if (hittables == null) return;
+        foreach (Collider2D hittable in hittables) if (hittable.TryGetComponent(out IHittable hittableScript)) hittableScript.Hit();
+        hittables = null;
+
+        onAttackApply?.Invoke();
+        uOnAttackApply?.Invoke();
     }
 }
