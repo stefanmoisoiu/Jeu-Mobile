@@ -273,7 +273,7 @@ MonoBehaviour:
     image: {fileID: 0}
     text: {fileID: 0}
     particleSystem: {fileID: 0}
-    paletteColorType: 2
+    paletteColorType: 1
 --- !u!1 &8715918879972746960
 GameObject:
   m_ObjectHideFlags: 0

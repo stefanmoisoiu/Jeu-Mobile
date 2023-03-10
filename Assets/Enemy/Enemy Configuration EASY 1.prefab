@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4449151077579504399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7346470816490221390}
+  - component: {fileID: 45481339187569233}
+  - component: {fileID: 7165934429192455259}
+  m_Layer: 0
+  m_Name: Enemy Configuration EASY 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7346470816490221390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449151077579504399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &45481339187569233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449151077579504399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e40de21630ede44a26c6422ec9ea37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uOnEnemyConfigurationEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7165934429192455259}
+        m_TargetAssemblyTypeName: DeleteFunction, Assembly-CSharp
+        m_MethodName: Delete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  enemyConfigurationDatas:
+  - enemyPrefab: {fileID: 8715918880174256585, guid: cb4a5f13a83bcc245882a6d9e06837ff, type: 3}
+    spawnHeight: 0
+    timeOffset: 0
+  - enemyPrefab: {fileID: 8715918880174256585, guid: cb4a5f13a83bcc245882a6d9e06837ff, type: 3}
+    spawnHeight: 4
+    timeOffset: 1
+  - enemyPrefab: {fileID: 8715918880174256585, guid: cb4a5f13a83bcc245882a6d9e06837ff, type: 3}
+    spawnHeight: 8
+    timeOffset: 2
+  difficulty: 0
+--- !u!114 &7165934429192455259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449151077579504399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e936ef6717bd3e45b0136d7cbecb6b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uOnDelete:
+    m_PersistentCalls:
+      m_Calls: []
