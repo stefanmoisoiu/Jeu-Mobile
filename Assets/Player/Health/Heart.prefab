@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2041878310379530433}
   - component: {fileID: 6342112174346178591}
   - component: {fileID: 54678789443460072}
+  - component: {fileID: 3456503102144928419}
   m_Layer: 5
   m_Name: Heart Image
   m_TagString: Untagged
@@ -76,6 +77,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3456503102144928419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847851913343042873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b0eff0e17147f449a6a3713b78b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rendererPalettes:
+  - camera: {fileID: 0}
+    sprite: {fileID: 0}
+    line: {fileID: 0}
+    image: {fileID: 54678789443460072}
+    text: {fileID: 0}
+    particleSystem: {fileID: 0}
+    paletteColorType: 0
 --- !u!1 &8602733411667966715
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,3 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e936ef6717bd3e45b0136d7cbecb6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uOnDelete:
+    m_PersistentCalls:
+      m_Calls: []

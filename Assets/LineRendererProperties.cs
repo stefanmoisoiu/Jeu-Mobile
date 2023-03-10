@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrailRendererProperties : MonoBehaviour
+public class LineRendererProperties : MonoBehaviour
 {
     [SerializeField] private bool useWorldSpace = true;
     [SerializeField] private float textureOffsetSpeed = 0;
