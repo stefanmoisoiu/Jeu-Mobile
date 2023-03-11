@@ -73,6 +73,8 @@ public class PlayerAttack : MonoBehaviour
         canAttack = false;
         Invoke(nameof(ResetAttack), attackCooldown);
 
+        for (int i = 0; i < hittables.Length; i++) if (hittables[i].TryGetComponent(out IHittable hittableScript)) hittableScript.StartHit();
+
         playerManager.Pause(attackPauseLength, AttackEnd);
     }
     private void AttackEnd()
@@ -92,7 +94,7 @@ public class PlayerAttack : MonoBehaviour
     private void HitHittables(ref Collider2D[] hittables)
     {
         if (hittables == null) return;
-        foreach (Collider2D hittable in hittables) if (hittable.TryGetComponent(out IHittable hittableScript)) hittableScript.Hit();
+        foreach (Collider2D hittable in hittables) if (hittable.TryGetComponent(out IHittable hittableScript)) hittableScript.EndHit();
         hittables = null;
 
         onAttackApply?.Invoke();

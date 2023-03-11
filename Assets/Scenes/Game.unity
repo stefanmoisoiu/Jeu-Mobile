@@ -221,7 +221,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &191507920
 MonoBehaviour:
@@ -235,9 +235,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59a40712dfb9ed40a2860064a97d11e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMultipliedSpeedPerMinute: 1
-  enemyConfigurations:
-  - {fileID: 45481339187569233, guid: fe6f45c05a92ed141ada46179424f8fc, type: 3}
+  startWaitBtwConfiguations: 2
+  reducedWaitPerConfiguration: 0.1
+  addedSpeedPerConfiguration: 0.05
+  maxEnemySpeedMult: 1.5
+  easyConfigChance: 0.4
+  mediumConfigChance: 0.3
+  hardConfigChance: 0.16040504
+  bossConfigChance: 0.12398738
+  easyConfigChanceLocked: 1
+  mediumConfigChanceLocked: 1
+  hardConfigChanceLocked: 1
+  bossConfigChanceLocked: 1
+  easyEnemyConfigurations:
+  - {fileID: 6836566535426603765, guid: 64a358f62e494f84aa6335b6363dae9a, type: 3}
+  - {fileID: 6836566535426603765, guid: e9576dd7438871d43bf13c63e43f3e95, type: 3}
+  - {fileID: 6836566535426603765, guid: 745350dc88c0ed74db50501c748f2835, type: 3}
+  - {fileID: 6836566535426603765, guid: 2b700fc4f3c69a24bb99d93d3fbebf4a, type: 3}
+  - {fileID: 6836566535426603765, guid: 724d531594bdba144b1debd2ff710135, type: 3}
+  - {fileID: 6836566535426603765, guid: ceba83d22a863ff499bc0ce1ec51e85f, type: 3}
+  - {fileID: 6836566535426603765, guid: 15c41bf27bb4fb344a55f59ed202d498, type: 3}
+  mediumEnemyConfigurations:
+  - {fileID: 6836566535426603765, guid: 108c077f47a9aba4f84aaf31b68e66a6, type: 3}
+  hardEnemyConfigurations:
+  - {fileID: 6836566535426603765, guid: 9f8f1f70645e4da4091db415496a499c, type: 3}
+  - {fileID: 6836566535426603765, guid: 5f039ad74a5aa79478a5ac4e6ff814b6, type: 3}
+  - {fileID: 6836566535426603765, guid: 6f7b188ab4f38844dae38505291f2c68, type: 3}
+  bossEnemyConfigurations:
+  - {fileID: 6836566535426603765, guid: e42a06fd5f451414eadcc625466f7507, type: 3}
 --- !u!1 &236836165
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakes:
   - name: Hittable Hit
-    magnitude: 0.8
+    magnitude: 0.3
     duration: 0.2
     frequency: 7
     direction: {x: 1, y: 0.5}
@@ -991,8 +1016,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766866669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.1006, z: 0}
-  m_LocalScale: {x: 23.397, y: 5.2013, z: 1}
+  m_LocalPosition: {x: 0, y: -7, z: 0}
+  m_LocalScale: {x: 23.397, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1048,37 +1073,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1994511636}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &772527539
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 772527540}
-  m_Layer: 0
-  m_Name: Enemy Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &772527540
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772527539}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.6187234, y: 1.6485481, z: -23.199596}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &903891462
 GameObject:
@@ -6318,7 +6312,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &1363215464
 MonoBehaviour:
@@ -6414,7 +6408,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1561181276
 GameObject:
@@ -6983,7 +6977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRight: {fileID: 934257976}
   attackLeft: {fileID: 1426354697}
-  attackSize: {x: 2.5, y: 3.5}
+  attackSize: {x: 3, y: 3.5}
   hittableLayer:
     serializedVersion: 2
     m_Bits: 64

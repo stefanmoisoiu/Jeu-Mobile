@@ -2,28 +2,32 @@ using System.Collections;
 using System;
 using UnityEngine.Events;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemyConfiguration : MonoBehaviour
 {
     public Action onEnemyConfigurationEnd;
     public UnityEvent uOnEnemyConfigurationEnd;
     [SerializeField] private EnemyConfigurationData[] enemyConfigurationDatas;
-    public int difficulty; // 0 = easy, 1 = medium, 2 = hard, 3 = boss
-
-    private void Start()
+    private List<GameObject> enemies = new List<GameObject>();
+    public IEnumerator SpawnConfiguration(float enemySpeedMult)
     {
-        StartCoroutine(SpawnConfiguration());
-    }
-    private IEnumerator SpawnConfiguration()
-    {
-        for (int i = 0; i < enemyConfigurationDatas.Length; i++) yield return StartCoroutine(SpawnEnemy(enemyConfigurationDatas[i]));
+        enemies.Clear();
+        for (int i = 0; i < enemyConfigurationDatas.Length; i++) yield return StartCoroutine(SpawnEnemy(enemyConfigurationDatas[i], enemySpeedMult));
+        while (enemies.Count > 0)
+        {
+            for (int i = 0; i < enemies.Count; i++) if (enemies[i] == null) enemies.RemoveAt(i);
+            yield return null;
+        }
         onEnemyConfigurationEnd?.Invoke();
         uOnEnemyConfigurationEnd?.Invoke();
     }
-    private IEnumerator SpawnEnemy(EnemyConfigurationData enemyConfigurationData)
+    private IEnumerator SpawnEnemy(EnemyConfigurationData enemyConfigurationData, float enemySpeedMult)
     {
         yield return new WaitForSeconds(enemyConfigurationData.timeOffset);
-        Instantiate(enemyConfigurationData.enemyPrefab, new Vector3(0, enemyConfigurationData.spawnHeight, 0), Quaternion.identity);
+        GameObject enemy = Instantiate(enemyConfigurationData.enemyPrefab, new Vector3(0, enemyConfigurationData.spawnHeight, 0), Quaternion.identity);
+        enemy.GetComponentInChildren<IMovingEnemy>().SpeedMult = enemySpeedMult;
+        enemies.Add(enemy);
     }
 
     [Serializable]
