@@ -239,13 +239,13 @@ MonoBehaviour:
   reducedWaitPerConfiguration: 0.1
   addedSpeedPerConfiguration: 0.05
   maxEnemySpeedMult: 1.5
-  easyConfigChance: 0.4
-  mediumConfigChance: 0.3
-  hardConfigChance: 0.16040504
-  bossConfigChance: 0.12398738
-  easyConfigChanceLocked: 1
-  mediumConfigChanceLocked: 1
-  hardConfigChanceLocked: 1
+  easyConfigChance: 0.4266134
+  mediumConfigChance: 0.32953978
+  hardConfigChance: 0.1938468
+  bossConfigChance: 0.05
+  easyConfigChanceLocked: 0
+  mediumConfigChanceLocked: 0
+  hardConfigChanceLocked: 0
   bossConfigChanceLocked: 1
   easyEnemyConfigurations:
   - {fileID: 6836566535426603765, guid: 64a358f62e494f84aa6335b6363dae9a, type: 3}
@@ -255,14 +255,19 @@ MonoBehaviour:
   - {fileID: 6836566535426603765, guid: 724d531594bdba144b1debd2ff710135, type: 3}
   - {fileID: 6836566535426603765, guid: ceba83d22a863ff499bc0ce1ec51e85f, type: 3}
   - {fileID: 6836566535426603765, guid: 15c41bf27bb4fb344a55f59ed202d498, type: 3}
+  - {fileID: 6836566535426603765, guid: 964e24ba118a69749bf1e266f5076f16, type: 3}
+  - {fileID: 6836566535426603765, guid: edca0a030ecd205478cb0c9cf9c095eb, type: 3}
   mediumEnemyConfigurations:
   - {fileID: 6836566535426603765, guid: 108c077f47a9aba4f84aaf31b68e66a6, type: 3}
+  - {fileID: 6836566535426603765, guid: cfc197534cd499f44a334aa59e7ed9c9, type: 3}
   hardEnemyConfigurations:
   - {fileID: 6836566535426603765, guid: 9f8f1f70645e4da4091db415496a499c, type: 3}
   - {fileID: 6836566535426603765, guid: 5f039ad74a5aa79478a5ac4e6ff814b6, type: 3}
   - {fileID: 6836566535426603765, guid: 6f7b188ab4f38844dae38505291f2c68, type: 3}
+  - {fileID: 6836566535426603765, guid: eb0831c9807f2b244b01998e9b9360df, type: 3}
   bossEnemyConfigurations:
   - {fileID: 6836566535426603765, guid: e42a06fd5f451414eadcc625466f7507, type: 3}
+  testEnemyConfiguration: {fileID: 0}
 --- !u!1 &236836165
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +821,6 @@ GameObject:
   m_Component:
   - component: {fileID: 729745597}
   - component: {fileID: 729745599}
-  - component: {fileID: 729745598}
   m_Layer: 0
   m_Name: Hit Sprite
   m_TagString: Untagged
@@ -839,26 +843,6 @@ Transform:
   m_Father: {fileID: 903891464}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &729745598
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 729745596}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9de1cf48ad45469468b49573c5d30f9f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &729745599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2228,7 +2212,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 15, y: 1, z: 1}
+    m_Scale: {x: 30, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -2426,7 +2410,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6441,6 +6425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20290c9b149e2d4d955443836c87039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincibleTime: 2
   uOnPillarDamage:
     m_PersistentCalls:
       m_Calls:
@@ -6648,13 +6633,22 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5000038
-      inSlope: 3.8573394
-      outSlope: 3.8573394
+      value: 0.9951644
+      inSlope: 0.030294118
+      outSlope: 0.030294118
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.028795812
+      outWeight: 0.17417829
+    - serializedVersion: 3
+      time: 0.34
+      value: 0.9000011
+      inSlope: -0.61648214
+      outSlope: -0.61648214
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: -0.000010043848

@@ -14,10 +14,11 @@ public class PlayerPillar : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.TryGetComponent(out IDamager damager)) return;
+        damager.DealtDamage();
         if (invincible) return;
+
         onPillarDamage?.Invoke();
         uOnPillarDamage?.Invoke();
-        damager.DealtDamage();
 
         invincible = true;
         Invoke(nameof(ResetInvincible), invincibleTime);

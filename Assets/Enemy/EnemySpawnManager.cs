@@ -20,6 +20,7 @@ public class EnemySpawnManager : MonoBehaviour
 
             EnemyConfiguration[] enemyConfigurations = GetEnemyConfigurations();
             EnemyConfiguration enemyConfiguration = Instantiate(enemyConfigurations[Random.Range(0, enemyConfigurations.Length)], new Vector3(0, 0, 0), Quaternion.identity);
+            print(enemyConfiguration.name);
             yield return StartCoroutine(enemyConfiguration.SpawnConfiguration(currentEnemySpeedMult));
 
             currentEnemySpeedMult = Mathf.Min(currentEnemySpeedMult + addedSpeedPerConfiguration, maxEnemySpeedMult);

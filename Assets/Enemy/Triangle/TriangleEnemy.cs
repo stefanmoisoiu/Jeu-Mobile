@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriangleEnemyMove : MonoBehaviour, IMovingEnemy
+public class TriangleEnemy : MonoBehaviour, IMovingEnemy
 {
     [SerializeField] private float speed = 1f;
     public float SpeedMult { get; set; }

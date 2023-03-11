@@ -34,7 +34,6 @@ public class PlayerAttack : MonoBehaviour
         leftHittables = LeftHittables();
         rightHittables = RightHittables();
 
-        Debug.Log($"Left: {leftHittables.Length}, Right: {rightHittables.Length}");
 
         if (leftHittables.Length > 0 || rightHittables.Length > 0)
         {
