@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 201846315}
   - component: {fileID: 201846317}
   - component: {fileID: 201846316}
+  - component: {fileID: 201846318}
   m_Layer: 5
   m_Name: Color 5
   m_TagString: Untagged
@@ -316,6 +317,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201846314}
   m_CullTransparentMesh: 1
+--- !u!114 &201846318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201846314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b0eff0e17147f449a6a3713b78b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rendererPalettes:
+  - camera: {fileID: 0}
+    sprite: {fileID: 0}
+    line: {fileID: 0}
+    image: {fileID: 201846316}
+    text: {fileID: 0}
+    particleSystem: {fileID: 0}
+    paletteColorType: 4
 --- !u!1 &254460403
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +537,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286367636}
   m_CullTransparentMesh: 1
+--- !u!1 &440945182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 440945184}
+  - component: {fileID: 440945183}
+  m_Layer: 0
+  m_Name: Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &440945183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440945182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 2d2755c619a145c479491e2d394a9a55, type: 2}
+--- !u!4 &440945184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440945182}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &699371878
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +597,7 @@ GameObject:
   - component: {fileID: 699371879}
   - component: {fileID: 699371882}
   - component: {fileID: 699371881}
+  - component: {fileID: 699371883}
   m_Layer: 5
   m_Name: Color 2
   m_TagString: Untagged
@@ -592,6 +663,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699371878}
   m_CullTransparentMesh: 1
+--- !u!114 &699371883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699371878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b0eff0e17147f449a6a3713b78b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rendererPalettes:
+  - camera: {fileID: 0}
+    sprite: {fileID: 0}
+    line: {fileID: 0}
+    image: {fileID: 699371881}
+    text: {fileID: 0}
+    particleSystem: {fileID: 0}
+    paletteColorType: 1
 --- !u!1 &747429908
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,7 +766,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 747429911}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305627111}
+        m_TargetAssemblyTypeName: MenuColorPaletteSelector, Assembly-CSharp
+        m_MethodName: SelectColorPalettePreview
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &747429911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,6 +946,7 @@ GameObject:
   - component: {fileID: 878658887}
   - component: {fileID: 878658890}
   - component: {fileID: 878658889}
+  - component: {fileID: 878658891}
   m_Layer: 5
   m_Name: Color 3
   m_TagString: Untagged
@@ -908,6 +1012,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878658886}
   m_CullTransparentMesh: 1
+--- !u!114 &878658891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878658886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b0eff0e17147f449a6a3713b78b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rendererPalettes:
+  - camera: {fileID: 0}
+    sprite: {fileID: 0}
+    line: {fileID: 0}
+    image: {fileID: 878658889}
+    text: {fileID: 0}
+    particleSystem: {fileID: 0}
+    paletteColorType: 2
 --- !u!1 &889746322
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +1043,7 @@ GameObject:
   - component: {fileID: 889746323}
   - component: {fileID: 889746326}
   - component: {fileID: 889746325}
+  - component: {fileID: 889746327}
   m_Layer: 5
   m_Name: Color 4
   m_TagString: Untagged
@@ -984,6 +1109,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889746322}
   m_CullTransparentMesh: 1
+--- !u!114 &889746327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889746322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b0eff0e17147f449a6a3713b78b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rendererPalettes:
+  - camera: {fileID: 0}
+    sprite: {fileID: 0}
+    line: {fileID: 0}
+    image: {fileID: 889746325}
+    text: {fileID: 0}
+    particleSystem: {fileID: 0}
+    paletteColorType: 3
 --- !u!1 &927366199
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,7 +1140,6 @@ GameObject:
   - component: {fileID: 927366200}
   - component: {fileID: 927366204}
   - component: {fileID: 927366203}
-  - component: {fileID: 927366202}
   - component: {fileID: 927366201}
   m_Layer: 5
   m_Name: Palette Preview
@@ -1055,26 +1199,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &927366202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927366199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35b0eff0e17147f449a6a3713b78b34e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rendererPalettes:
-  - camera: {fileID: 0}
-    sprite: {fileID: 0}
-    line: {fileID: 0}
-    image: {fileID: 927366203}
-    text: {fileID: 0}
-    particleSystem: {fileID: 0}
-    paletteColorType: 3
 --- !u!114 &927366203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,6 +1406,7 @@ GameObject:
   - component: {fileID: 1092883299}
   - component: {fileID: 1092883302}
   - component: {fileID: 1092883301}
+  - component: {fileID: 1092883303}
   m_Layer: 5
   m_Name: Color 1
   m_TagString: Untagged
@@ -1347,6 +1472,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092883298}
   m_CullTransparentMesh: 1
+--- !u!114 &1092883303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092883298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b0eff0e17147f449a6a3713b78b34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rendererPalettes:
+  - camera: {fileID: 0}
+    sprite: {fileID: 0}
+    line: {fileID: 0}
+    image: {fileID: 1092883301}
+    text: {fileID: 0}
+    particleSystem: {fileID: 0}
+    paletteColorType: 0
 --- !u!1 &1107643605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,7 +1575,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1107643608}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1305627111}
+        m_TargetAssemblyTypeName: MenuColorPaletteSelector, Assembly-CSharp
+        m_MethodName: SelectColorPalettePreview
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1107643608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1644,7 +1801,7 @@ GameObject:
   - component: {fileID: 1262444470}
   - component: {fileID: 1262444473}
   - component: {fileID: 1262444474}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1734,13 +1891,13 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1780,6 +1937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1305627109}
   - component: {fileID: 1305627110}
+  - component: {fileID: 1305627111}
   m_Layer: 5
   m_Name: Color Palette Selector
   m_TagString: Untagged
@@ -1836,6 +1994,31 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1305627111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305627108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f0100503ff8dc4db6f1be3f6731f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockableColorPalettes:
+  - texture: {fileID: 2800000, guid: 2b1a8713b0b1eb74d93665514e474e6f, type: 3}
+    maxScoreRequired: 0
+  - texture: {fileID: 2800000, guid: da8083556cc822048aa0611c465edf2a, type: 3}
+    maxScoreRequired: 300
+  - texture: {fileID: 2800000, guid: f6f06065da32bbe4b8b75cc0266d403a, type: 3}
+    maxScoreRequired: 600
+  - texture: {fileID: 2800000, guid: 1dadac63a4edda242a581368b4ce6135, type: 3}
+    maxScoreRequired: 800
+  - texture: {fileID: 2800000, guid: c96069c8aea1d0c4cac7c6414916c342, type: 3}
+    maxScoreRequired: 1000
+  - texture: {fileID: 2800000, guid: 62043a6cac6120e4bb2687d6cbc56d46, type: 3}
+    maxScoreRequired: 1200
 --- !u!1 &1503463323
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,7 +2251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20219e1412cfbfa438bc772739b13e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colorPaletteTexture: {fileID: 2800000, guid: da8083556cc822048aa0611c465edf2a, type: 3}
+  test: {fileID: 0}
 --- !u!4 &1921975262
 Transform:
   m_ObjectHideFlags: 0
