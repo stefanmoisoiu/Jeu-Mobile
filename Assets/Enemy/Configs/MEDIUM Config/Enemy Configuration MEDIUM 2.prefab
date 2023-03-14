@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 45481339187569233, guid: fe6f45c05a92ed141ada46179424f8fc, type: 3}
       propertyPath: enemyConfigurationDatas.Array.data[2].timeOffset
-      value: 1.25
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 45481339187569233, guid: fe6f45c05a92ed141ada46179424f8fc, type: 3}
       propertyPath: enemyConfigurationDatas.Array.data[3].timeOffset
