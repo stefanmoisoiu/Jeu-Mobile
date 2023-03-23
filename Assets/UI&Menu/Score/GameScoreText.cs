@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System;
 
-public class HighScoreText : MonoBehaviour
+public class GameScoreText : MonoBehaviour
 {
     private int currentScore;
     [SerializeField] private TMP_Text previousScoreText, currentScoreText;

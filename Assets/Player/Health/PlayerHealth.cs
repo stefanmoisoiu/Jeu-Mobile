@@ -36,5 +36,7 @@ public class PlayerHealth : MonoBehaviour
     {
         uOnDie?.Invoke();
         onDie?.Invoke();
+
+        FindObjectOfType<HighScoreSave>().TrySaveHighScore(ScoreManager.score);
     }
 }
